@@ -1,0 +1,27 @@
+<html>
+  
+  <link rel="stylesheet" href="https://pbutcher.uk/flipdown/css/flipdown/flipdown.css">
+  <link rel="stylesheet" href="timer.css">
+
+<body>
+
+  <h1>Countdown Timer</h1>
+  <div id="flipdown" class="flipdown"></div>
+  <script src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      var countdownTime = Math.floor(new Date().getTime() / 1000) + (30); // from where to countdown write inside instead of 30sec
+
+      new FlipDown(countdownTime)
+        .start()
+        .ifEnded(() => {
+          console.log('The countdown ended');
+        });
+    });
+  </script>
+
+</body>
+
+</html>
